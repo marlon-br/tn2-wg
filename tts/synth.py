@@ -4,12 +4,12 @@ import sys
 import numpy as np
 import torch
 
-from .hparams import create_hparams
-from .model import Tacotron2
-from .layers import TacotronSTFT
-from .train import load_model
-from .text import text_to_sequence
-from . import glow
+from hparams import create_hparams
+from model import Tacotron2
+from layers import TacotronSTFT
+from train import load_model
+from text import text_to_sequence
+import glow
 sys.modules['glow'] = glow
 
 def synth(models, text, out):

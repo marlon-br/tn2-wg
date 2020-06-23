@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from .symbols import symbols
+from symbols import symbols
 
 def create_hparams(hparams_string=None, verbose=False):
     """Create model hyperparameters. Parse nondefault from given string."""
