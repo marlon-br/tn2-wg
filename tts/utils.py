@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.io.wavfile import read
 import torch
-
+import scipy.io.wavfile as wav
 
 def get_mask_from_lengths(lengths):
     max_len = torch.max(lengths).item()
@@ -17,7 +17,16 @@ def load_wav_to_torch(full_path):
 
 def load_filepaths_and_text(filename, split="|"):
     with open(filename, encoding='utf-8') as f:
-        filepaths_and_text = [line.strip().split(split) for line in f]
+        filepaths_and_text = []
+        for line in f:
+            a = line.strip().split(split)
+            (source_rate, source_sig) = wav.read(a[0])
+            duration_seconds = len(source_sig) / float(source_rate)
+            if (duration_seconds < 20):
+                filepaths_and_text.append(a)
+            else:
+                print(a)
+        #filepaths_and_text = [line.strip().split(split) for line in f]
     return filepaths_and_text
 
 
