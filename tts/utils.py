@@ -22,7 +22,7 @@ def load_filepaths_and_text(filename, split="|"):
             a = line.strip().split(split)
             (source_rate, source_sig) = wav.read(a[0])
             duration_seconds = len(source_sig) / float(source_rate)
-            if (duration_seconds < 20):
+            if (duration_seconds < 20) and len(a[1]) > 6:
                 filepaths_and_text.append(a)
             else:
                 print(a)
