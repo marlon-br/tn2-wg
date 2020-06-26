@@ -1,0 +1,53 @@
+
+
+https://github.com/nathtest/Tutorial-Ubuntu-18.04-Install-Nvidia-driver-and-CUDA-and-CUDNN-and-build-Tensorflow-for-gpu/blob/master/README.md
+https://gist.github.com/bogdan-kulynych/f64eb148eeef9696c70d485a76e42c3a
+
+
+cd /content/
+git clone https://github.com/NVIDIA/apex apex
+cd apex
+pip3 install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+cd /home/kolich_estier_gmail_com/
+
+
+pip3 install matplotlib==2.1.0
+pip3 install tensorflow==1.15.2
+pip3 install numpy==1.13.3
+pip3 install inflect==0.2.5
+pip3 install librosa==0.6.0
+pip3 install scipy==1.0.0
+pip3 install Unidecode==1.0.22
+pip3 install pillow
+pip3 install torch==1.1.0 torchvision==0.3.0
+
+
+git clone https://github.com/marlon-br/tn2-wg tn2-wg
+
+
+curl https://rclone.org/install.sh | sudo bash
+
+778155102974-bs05fq8gnnteanhoti34ulhi201m8ooq.apps.googleusercontent.com
+KOokvCDBAjV8FCP88xTYdH-k
+
+rclone copy remote:audio/newvoice /home/kolich_estier_gmail_com/tn2-wg/tts/
+rclone copy remote:audio/checkpoint_3400 /home/kolich_estier_gmail_com/tn2-wg/tts/model/checkpoint_3400
+
+cd tn2-wg/tts
+
+python3 train.py -o "/model" -l "/logs" --warm_start --checkpoint_path /model/checkpoint_2200
+
+cuda-drivers-450
+
+
+62981179613-092j562ipbn1889ake28ie2kh6t9qnq7.apps.googleusercontent.com
+jLQhaqkK7k8yW8pUtI4B523M
+
+python3 train.py -o "/home/kolich_estier_gmail_com/tn2-wg/tts/model" -l "/home/kolich_estier_gmail_com/tn2-wg/tts/logs" --warm_start --checkpoint_path/home/kolich_estier_gmail_com/tn2-wg/tts/model/checkpoint_2200/checkpoint_2200
+python3 train.py -o "/content/tn2-wg/tts/model" -l "/content/tn2-wg/tts/logs" --warm_start --checkpoint_path /content/tn2-wg/tts/model/checkpoint_2200
+
+train.py -o /model -l /logs --warm_start --checkpoint_path /model/checkpoint_2200
+
+
+wget --no-check-certificate -r 'https://drive.google.com/drive/folders/1qx8pgGLp_V4d6LD2coJwxtq_mPMfiSep' -O folder
+https://drive.google.com/drive/folders/1qx8pgGLp_V4d6LD2coJwxtq_mPMfiSep?usp=sharing
